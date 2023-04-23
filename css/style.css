@@ -30,7 +30,7 @@
   transition: 0.4s;
   box-shadow: 0 4px 8px 1px rgba(142, 173, 213, 0.57);
 }
-
+/* Бургер меню */
 .burger {
   display: none;
   justify-content: flex-end;
@@ -111,37 +111,98 @@
 .menu li {
   list-style-type: none;
 }
+/* Header */
+.header {
+  width: 100%;
+  color: #fdfcfc;
+  height: 7.5rem;
+  padding: 1rem;
+}
 
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  text-transform: uppercase;
+  font-family: 'Inter-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #272d38;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.header__logo.animated {
+  opacity: 1;
+}
+
+.header__nav {
+  display: flex;
+}
+
+@media (max-width: 420px) {
+  .header__nav {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.header__nav-link {
+  margin-right: 4.4rem;
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  position: relative;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: 2s linear;
+}
+.header__nav-link.animated {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.header__nav-link:hover {
+  transition: 0.3s;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 420px) {
+  .header__nav-link {
+    margin-bottom: 5.5rem;
+  }
+}
+
+.header__nav-link a {
+  transition: 0.3s;
+}
+
+.header__nav-link a:hover {
+  transition: 0.3s;
+  color: #000000;
+}
+
+@media (max-width: 420px) {
+  .header__nav-link a {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+}
+
+/* Утилиты */
 .text-center {
   text-align: center;
 }
 
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
 .block-center {
   margin: auto;
-}
-
-.block-left {
-  margin-left: auto;
-}
-
-.block-right {
-  margin-right: auto;
-}
-
-.absolute-right {
-  right: 0;
-}
-
-.absolute-top {
-  top: 0;
 }
 
 .margin-bottom-10px {
@@ -160,10 +221,6 @@
   margin-bottom: 5rem;
 }
 
-.margin-bottom-60px {
-  margin-bottom: 5rem;
-}
-
 .margin-bottom-80px {
   margin-bottom: 8rem;
 }
@@ -175,34 +232,22 @@
 .margin-bottom-150px {
   margin-bottom: 15rem;
 }
-
-.x-indent-75 {
-  margin: 0 7.5rem;
-}
-
-.x-indent-100 {
-  margin: 0 10rem;
-}
-
-.x-indent-250 {
-  margin: 0 12.5rem;
-}
-
+/*шрифты*/
 @font-face {
-  font-family: "Inter-Bold";
+  font-family: 'Inter-Bold';
   src: url(../fonts/Inter/static/Inter-Bold.ttf);
 }
 
 @font-face {
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
   src: url(../fonts/Inter/static/Inter-Regular.ttf);
 }
 
 @font-face {
-  font-family: "Inter-Light";
+  font-family: 'Inter-Light';
   src: url(../fonts/Inter/static/Inter-Light.ttf);
 }
-
+/*Сброс стилей*/
 *,
 ::after,
 ::before {
@@ -210,7 +255,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/*Настройка адаптивности + настройка контейнеров + общие стили*/
 .main p {
   font-size: 1.8rem;
 }
@@ -237,12 +282,8 @@ body {
   background-color: #fdfcfc;
   color: #272d38;
   overflow-x: hidden;
-}
-
-.main a,
-.main a {
-  color: #272d38;
-  text-decoration: none;
+  min-height: 100%;
+  overflow-y: scroll;
 }
 
 @media (max-width: 1320px) {
@@ -377,43 +418,48 @@ body {
 }
 
 .html.static {
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .wrapper {
   max-width: 1440px;
-  margin: auto;
   padding: 5rem;
   position: relative;
 }
-
+/*Типографика*/
 h1,
 h2,
 h5,
 h6 {
-  font-family: "Inter-Bold";
+  font-family: 'Inter-Bold';
   font-weight: 700;
   font-size: 6.4rem;
   text-transform: capitalize;
   font-style: normal;
 }
 
-.mainp {
+.main a,
+.main a {
+  color: #272d38;
+  text-decoration: none;
+}
+
+.main p {
   font-size: 1.8rem;
   font-weight: 400;
-  font-family: "Inter-Regular";
+  font-family: 'Inter-Regular';
 }
 
 h5 {
   font-weight: 400;
   font-size: 1.8rem;
-  font-family: "Inter-Light";
+  font-family: 'Inter-Light';
 }
 
 h6 {
   font-weight: 700;
   font-size: 1.8rem;
-  font-family: "Inter-Light";
+  font-family: 'Inter-Light';
 }
 
 .main a {
@@ -425,7 +471,7 @@ h6 {
     font-size: 4rem;
   }
 }
-
+/*Общие стили для блоков*/
 .hero__content,
 .branding__content,
 .custom__content,
@@ -489,6 +535,40 @@ h6 {
   font-size: 4.2rem;
 }
 
+.hero__text h1,
+.branding__text h2,
+.custom__text a,
+.contact__text h2,
+.footer__text h2 {
+  font-size: 4.2rem;
+}
+
+.hero__text {
+  opacity: 0;
+  transform: rotateX(-20px);
+  transition: 2s;
+}
+
+.hero__text.animated {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
+.branding__text,
+.custom__text,
+.contact__text {
+  transform: scale(0);
+  transition: 3s;
+  opacity: 0;
+}
+
+.branding__text.animated,
+.custom__text.animated,
+.contact__text.animated {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .hero__image img,
 .branding__image img,
 .custom__image img,
@@ -496,6 +576,18 @@ h6 {
 .footer__image img {
   width: 45rem;
   height: 45rem;
+  opacity: 0;
+  transition: 2s;
+  transform: translateY(20px);
+}
+
+.hero__image.animated img,
+.branding__image.animated img,
+.custom__image.animated img,
+.contact__image.animated img,
+.footer__image.animated img {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ellipse {
@@ -530,12 +622,35 @@ h6 {
 
 .arrow {
   font-size: 9rem !important;
+  position: relative;
+  animation: arrowRigth 1s linear infinite alternate 0s forwards;
+}
+
+@keyframes arrowRigth {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 30px;
+  }
+}
+
+@keyframes arrowBottom {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: 20px;
+  }
 }
 
 @media (max-width: 420px) {
   .arrow {
     writing-mode: vertical-rl;
     font-size: 9rem;
+    animation: arrowBottom 1s linear infinite alternate 0s forwards;
   }
 }
 
@@ -551,11 +666,16 @@ h6 {
 
 .companies__logos {
   width: 90%;
-  margin: auto;
   background-color: #f6f6f6;
   display: flex;
   justify-content: space-between;
   padding: 2.2rem 2.4rem;
+  transition: 2s;
+  width: 0;
+}
+
+.companies__logos.animated {
+  width: 90%;
 }
 
 .companies__logos img {
@@ -584,16 +704,37 @@ h6 {
 
 @media (max-width: 420px) {
   .testimonial__container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+}
+
+.testimonial__text h2,
+.testimonial__text p {
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 2s;
+}
+
+.testimonial__text h2.animated,
+.testimonial__text p.animated {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .testimonial__card {
   background-color: #f6f6f6;
   width: 32%;
   padding: 3.2rem;
+  transition: 4s;
+  transform: skew(55deg);
+  opacity: 0;
+}
+
+.testimonial__card.animated {
+  transform: skew(0);
+  opacity: 1;
 }
 
 @media (max-width: 420px) {
@@ -665,78 +806,6 @@ h6 {
   }
 }
 
-.header {
-  width: 100%;
-  color: #fdfcfc;
-  height: 7.5rem;
-  padding: 1rem;
-}
-
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__logo {
-  text-transform: uppercase;
-  font-family: "Inter-Bold";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #272d38;
-}
-
-.header__nav {
-  display: flex;
-}
-
-@media (max-width: 420px) {
-  .header__nav {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
-}
-
-.header__nav-link {
-  margin-right: 4.4rem;
-  font-family: "Inter-Regular";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.8rem;
-  position: relative;
-  transition: 0.3s;
-  transform: translateY(0);
-}
-
-.header__nav-link:hover {
-  transition: 0.3s;
-  transform: translateY(-5px);
-}
-
-@media (max-width: 420px) {
-  .header__nav-link {
-    margin-bottom: 5.5rem;
-  }
-}
-
-.header__nav-link a {
-  transition: 0.3s;
-}
-
-.header__nav-link a:hover {
-  transition: 0.3s;
-  color: #000000;
-}
-
-@media (max-width: 420px) {
-  .header__nav-link a {
-    font-size: 4rem;
-    font-weight: 700;
-  }
-}
-
 .footer {
   background-color: #f6f6f6;
 }
@@ -747,11 +816,17 @@ h6 {
 
 .footer__content {
   align-items: baseline;
+  opacity: 0;
+  transition: 2s;
+}
+
+.footer__content.animated {
+  opacity: 1;
 }
 
 .footer__box a,
 .footer .root {
-  font-family: "Inter-Light";
+  font-family: 'Inter-Light';
   font-weight: 300;
   font-size: 1.6rem;
 }
