@@ -45,12 +45,18 @@
 }
 
 .burger .menu-btn {
-  width: 30px;
+  width: 0;
   height: 30px;
   position: relative;
   z-index: 2;
   overflow: hidden;
   transition: 1s ease;
+  transform: rotate(90deg);
+}
+
+.burger .menu-btn.animated {
+  transform: rotate(0);
+  width: 30px; 
 }
 
 .menu-btn span {
@@ -162,7 +168,7 @@
   transition: 0.3s;
   opacity: 0;
   transform: translateX(-30px);
-  transition: 2s linear;
+  transition: 1.3s linear;
 }
 .header__nav-link.animated {
   transform: translateX(0);
@@ -546,7 +552,7 @@ h6 {
 .hero__text {
   opacity: 0;
   transform: rotateX(-20px);
-  transition: 2s;
+  transition: 1.8s;
 }
 
 .hero__text.animated {
@@ -558,7 +564,7 @@ h6 {
 .custom__text,
 .contact__text {
   transform: scale(0);
-  transition: 3s;
+  transition: 1.8s;
   opacity: 0;
 }
 
@@ -577,7 +583,7 @@ h6 {
   width: 45rem;
   height: 45rem;
   opacity: 0;
-  transition: 2s;
+  transition: 1.8s;
   transform: translateY(20px);
 }
 
@@ -727,8 +733,8 @@ h6 {
   background-color: #f6f6f6;
   width: 32%;
   padding: 3.2rem;
-  transition: 4s;
-  transform: skew(55deg);
+  transition: 2s;
+  transform: skew(25deg);
   opacity: 0;
 }
 
@@ -817,7 +823,7 @@ h6 {
 .footer__content {
   align-items: baseline;
   opacity: 0;
-  transition: 2s;
+  transition: 3s;
 }
 
 .footer__content.animated {
